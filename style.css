@@ -301,8 +301,26 @@ p {
 
 /* Responsive */
 @media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 15px;
+    }
+    
+    .navbar.scrolled {
+        padding: 15px;
+    }
+
     .menu {
-        display: none;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 15px;
+    }
+    
+    .menu a {
+        margin-left: 0;
+        font-size: 0.8rem;
     }
 
     .gallery {
@@ -318,9 +336,7 @@ p {
         text-align: left;
     }
 
-    .navbar {
-        padding: 20px;
-    }
+
 }
 
 /* Product Page & Cart Styles */
