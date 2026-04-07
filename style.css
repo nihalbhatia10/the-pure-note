@@ -767,8 +767,25 @@ p {
 @media (max-width: 768px) {
     .trust-banner {
         flex-direction: column;
-        align-items: flex-start;
-        gap: 40px;
-        padding-left: 10vw;
+        align-items: center;
+        gap: 50px;
+        padding: 50px 20px;
+    }
+
+    .trust-badge {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+        max-width: 100%;
+    }
+
+    .trust-content {
+        align-items: center;
+    }
+
+    .trust-content h4 {
+        border-bottom: 1px solid #dcdcdc;
+        display: inline-block;
+        padding-bottom: 6px;
     }
 }
