@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE PURE NOTE | Sign In</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=3">
+</head>
+
+<body>
+
+    <nav class="navbar scrolled" style="background-color: rgba(250, 250, 250, 0.95); backdrop-filter: blur(10px); padding: 20px 50px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);">
+        <a href="index.html" class="logo">THE PURE NOTE</a>
+        <div class="menu">
+            <a href="index.html#vision">Vision</a>
+            <a href="collection.html">Collection</a>
+            <a href="index.html#sample">Sample</a>
+            <a href="https://wa.me/917770027979?text=Can%20I%20get%20more%20Info%20on%20this%3F" target="_blank" rel="noopener noreferrer">Contact</a>
+            <a href="login.html" id="nav-login-btn" style="font-weight: 600; border-bottom: 2px solid var(--accent); padding-bottom: 3px;">Log in</a>
+        </div>
+    </nav>
+
+    <div class="auth-page">
+        <div class="auth-container fade-up">
+            <h1 style="color: #121212; text-shadow: none;">Welcome Back</h1>
+            <p>Sign in to access your exclusive fragrance journey.</p>
+            
+            <p id="auth-error-msg" style="color: red; font-size: 0.85rem; margin-bottom: 15px; display: none;"></p>
+            <form class="auth-form" id="email-login-form">
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" id="email-input" placeholder="client@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="password-input" placeholder="••••••••" required>
+                </div>
+                <button type="submit" id="email-action-btn" class="auth-submit-btn">Sign In</button>
+            </form>
+
+            <p style="font-size: 0.9rem; text-align: center; margin-top: 20px; color: var(--text-secondary);">
+                Don't have an account? <a href="#" id="toggle-auth-mode" style="color: var(--accent); font-weight: 600; text-decoration: none;">Sign up instead</a>
+            </p>
+
+            <div class="divider">
+                <span>OR</span>
+            </div>
+
+            <button id="google-login-btn" class="google-btn">
+                <svg viewBox="0 0 48 48" width="24px" height="24px">
+                    <title>Google Logo</title>
+                    <clipPath id="g"><path d="M44.5 20H24v8.5h11.8C34.7 33.9 30.1 37 24 37c-7.2 0-13-5.8-13-13s5.8-13 13-13c3.1 0 5.9 1.1 8.1 2.9l6.4-6.4C34.6 4.1 29.6 2 24 2 11.8 2 2 11.8 2 24s9.8 22 22 22c11 0 21-8 21-22 0-1.3-.2-2.7-.5-4z"/></clipPath>
+                    <g class="colors" clip-path="url(#g)">
+                        <path fill="#FBBC05" d="M0 37V11l17 13z"/>
+                        <path fill="#EA4335" d="M0 11l17 13 7-6.1L48 14V0H0z"/>
+                        <path fill="#34A853" d="M0 37l30-23 7.9 1L48 0v48H0z"/>
+                        <path fill="#4285F4" d="M48 48L17 24l-4-3 35-10z"/>
+                    </g>
+                </svg>
+                Continue with Gmail
+            </button>
+        </div>
+    </div>
+
+    <!-- Ensure Dark Footer -->
+    <footer class="dark-footer" style="margin-top: 0;">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-logo">
+                    <h2 class="fade-up">THE PURE NOTE</h2>
+                    <p class="fade-up delay-1">Paris • London • New York</p>
+                    <div class="fade-up delay-2">
+                        <a href="https://wa.me/917770027979?text=Can%20I%20get%20more%20Info%20on%20this%3F" target="_blank" rel="noopener noreferrer" class="btn btn-outline-white">Chat on WhatsApp</a>
+                    </div>
+                </div>
+                <div class="footer-links fade-up delay-2">
+                    <h3>Quick Links</h3>
+                    <a href="index.html#vision">Our Vision</a>
+                    <a href="collection.html">Full Collection</a>
+                    <a href="index.html#sample">Order Sample Set</a>
+                    <a href="https://wa.me/917770027979?text=Can%20I%20get%20more%20Info%20on%20this%3F" target="_blank" rel="noopener noreferrer">Contact Us</a>
+                </div>
+            </div>
+            
+            <div class="trust-stars fade-up delay-3">
+                <a href="return-policy.pdf" target="_blank" class="trust-star"><span class="star">★</span> Return Policy</a>
+                <a href="terms-and-conditions.pdf" target="_blank" class="trust-star"><span class="star">★</span> Terms and Conditions</a>
+                <span class="trust-star"><span class="star">★</span> 100% Authentic</span>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 THE PURE NOTE. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Import our custom Firebase module -->
+    <script type="module" src="auth.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

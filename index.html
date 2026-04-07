@@ -18,11 +18,12 @@
     <nav class="navbar">
         <a href="index.html" class="logo">THE PURE NOTE</a>
         <div class="menu">
-            <a href="index.html#vision">Vision</a>
-            <a href="index.html#collection">Collection</a>
-            <a href="sample.html">Sample</a>
+            <a href="#vision">Vision</a>
+            <a href="collection.html">Collection</a>
+            <a href="#sample">Sample</a>
             <a href="https://wa.me/917770027979?text=Can%20I%20get%20more%20Info%20on%20this%3F" target="_blank"
                 rel="noopener noreferrer">Contact</a>
+            <a href="login.html" id="nav-login-btn" style="font-weight: 600; border-bottom: 2px solid var(--accent); padding-bottom: 3px;">Log in</a>
         </div>
     </nav>
 
@@ -30,7 +31,7 @@
         <div class="hero-content">
             <h1 class="fade-up">Essence of Elegance</h1>
             <p class="fade-up delay-1">Discover the finest art of perfumery, distilled into pure notes.</p>
-            <a href="#collection" class="btn fade-up delay-2">Explore the Collection</a>
+            <a href="collection.html" class="btn fade-up delay-2">Explore the Collection</a>
         </div>
         <div class="hero-bg fade-in delay-3">
             <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover;">
@@ -41,35 +42,63 @@
         </div>
     </header>
 
-    <section id="collection" class="collection section">
-        <div class="collection-header fade-up">
-            <h2 class="reveal-text">Our Creations</h2>
-        </div>
-        <div class="gallery">
-            <div class="gallery-item">
-                <img src="./images/perfume_bottle_2.png" alt="Ethereal Silk">
-                <h3>Ethereal Silk</h3>
-                <p>Soft, airy, unforgettable.</p>
+    <section id="sample" class="section">
+        <div class="product-page">
+            <div class="product-image fade-up">
+                <img src="./images/sample_bottles.png" alt="Pure Note Discovery Set 4x20ml">
             </div>
-
-            <div class="gallery-item">
-                <img src="./images/perfume_bottle_4.png" alt="Golden Petals">
-                <h3>Golden Petals</h3>
-                <p>Classic, luminous, radiant.</p>
-            </div>
-
-            <div class="gallery-item">
-                <img src="./images/perfume_bottle_6.png" alt="Oud Supreme">
-                <h3>Oud Supreme</h3>
-                <p>Rich, woody, captivating.</p>
-            </div>
-            <div class="gallery-item">
-                <img src="./images/perfume_bottle_7.png" alt="Pure Canvas">
-                <h3>Pure Canvas</h3>
-                <p>Clean, minimal, essential.</p>
+            <div class="product-details fade-up delay-1">
+                <h1>Discovery Set</h1>
+                <div class="price">₹499</div>
+                <p>Experience the true essence of elegance with our exclusive discovery set. Curated for the connoisseur, this set contains 4 of our most exquisite fragrances in luxurious 20ml cylindrical spray bottles. It's the perfect introduction to the world of The Pure Note.</p>
+                <button class="btn" id="add-to-cart-btn">Add to Cart</button>
             </div>
         </div>
     </section>
+
+    <!-- Checkout Modal -->
+    <div class="modal-overlay" id="checkout-modal">
+        <div class="modal-content">
+            <button class="modal-close" id="close-modal">&times;</button>
+            <h2>Checkout</h2>
+            <div class="cart-summary">
+                <span>Discovery Set (x1)</span>
+                <span>₹499</span>
+            </div>
+            
+            <form class="payment-form" id="payment-form" style="display: flex;">
+                <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 5px;">Enter your delivery details to proceed to the secure UPI payment.</p>
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="customer-name" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label>Shipping Address</label>
+                    <input type="text" id="customer-address" placeholder="123 Perfume Lane, City, Pincode" required>
+                </div>
+                <!-- Direct UPI Button -->
+                <button type="submit" class="pay-btn" style="background-color: #27ae60;">Pay ₹499 via UPI</button>
+            </form>
+
+            <!-- Post Payment Step -->
+            <div id="post-payment-step" style="display: none; text-align: center; padding: 10px 0;">
+                <h3 style="color: #27ae60; margin-bottom: 15px;">Complete Your Payment</h3>
+                
+                <div style="background: white; padding: 10px; border-radius: 8px; display: inline-block; margin-bottom: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                    <img id="upi-qr-code" src="" alt="UPI QR Code" style="width: 200px; height: 200px; display: block;">
+                </div>
+                
+                <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 15px; line-height: 1.5;">
+                    <strong>On Mobile:</strong> Your UPI app should open automatically.<br>
+                    <strong>On Laptop:</strong> Scan the QR code above using any UPI app (GPay, PhonePe, Paytm).
+                </p>
+                <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 20px; line-height: 1.5;">
+                    After paying, <strong>please send us the screenshot</strong> on WhatsApp to confirm.
+                </p>
+                <a id="whatsapp-confirm-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn" style="background-color: #25D366; color: white; border: none; width: 100%; margin: 0; font-weight: 600;">Confirm Order on WhatsApp</a>
+            </div>
+        </div>
+    </div>
 
     <section id="vision" class="vision section">
         <h2 class="reveal-text">A Symphony in a Bottle</h2>
@@ -77,16 +106,75 @@
             memory. Every drop of The Pure Note is crafted with exquisite rare ingredients and boundless passion.</p>
     </section>
 
-    <footer id="footer" class="footer section">
-        <h2 class="fade-up">THE PURE NOTE</h2>
-        <p class="fade-up delay-1">Paris • London • New York</p>
-        <div style="margin-top: 40px;" class="fade-up delay-2">
-            <a href="https://wa.me/917770027979?text=Can%20I%20get%20more%20Info%20on%20this%3F" target="_blank"
-                rel="noopener noreferrer" class="btn">Chat on WhatsApp</a>
+    <footer class="dark-footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-logo">
+                    <h2 class="fade-up">THE PURE NOTE</h2>
+                    <p class="fade-up delay-1">Paris • London • New York</p>
+                    <div class="fade-up delay-2">
+                        <a href="https://wa.me/917770027979?text=Can%20I%20get%20more%20Info%20on%20this%3F" target="_blank" rel="noopener noreferrer" class="btn btn-outline-white">Chat on WhatsApp</a>
+                    </div>
+                </div>
+                <div class="footer-links fade-up delay-2">
+                    <h3>Quick Links</h3>
+                    <a href="#vision">Our Vision</a>
+                    <a href="collection.html">Full Collection</a>
+                    <a href="#sample">Order Sample Set</a>
+                    <a href="https://wa.me/917770027979?text=Can%20I%20get%20more%20Info%20on%20this%3F" target="_blank" rel="noopener noreferrer">Contact Us</a>
+                </div>
+            </div>
+            
+            <div class="trust-stars fade-up delay-3">
+                <a href="return-policy.pdf" target="_blank" class="trust-star">
+                    <span class="star">★</span> Return Policy
+                </a>
+                <a href="terms-and-conditions.pdf" target="_blank" class="trust-star">
+                    <span class="star">★</span> Terms and Conditions
+                </a>
+                <span class="trust-star">
+                    <span class="star">★</span> 100% Authentic
+                </span>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 THE PURE NOTE. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        document.getElementById('add-to-cart-btn').addEventListener('click', function() {
+            document.getElementById('checkout-modal').classList.add('active');
+            document.getElementById('payment-form').style.display = 'flex';
+            document.getElementById('post-payment-step').style.display = 'none';
+        });
+
+        document.getElementById('close-modal').addEventListener('click', function() {
+            document.getElementById('checkout-modal').classList.remove('active');
+        });
+
+        document.getElementById('payment-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('customer-name').value;
+            const address = document.getElementById('customer-address').value;
+            
+            document.getElementById('payment-form').style.display = 'none';
+            document.getElementById('post-payment-step').style.display = 'block';
+            
+            const waNumber = '917770027979'; 
+            const waMessage = `Hi! I just paid for the Discovery Set (4x20ml) for ₹499 via UPI.\n\nHere are my shipping details:\n*Name:* ${name}\n*Address:* ${address}\n\n[Please attach your payment screenshot here]`;
+            const waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(waMessage)}`;
+            document.getElementById('whatsapp-confirm-btn').href = waUrl;
+            
+            const upiId = 'YOUR_UPI_ID_HERE@bank'; 
+            const upiUrl = `upi://pay?pa=${upiId}&pn=THE%20PURE%20NOTE&am=499&cu=INR`;
+            
+            document.getElementById('upi-qr-code').src = `https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${encodeURIComponent(upiUrl)}`;
+            window.location.href = upiUrl;
+        });
+    </script>
+    <script type="module" src="auth.js"></script>
 </body>
 
 </html>
