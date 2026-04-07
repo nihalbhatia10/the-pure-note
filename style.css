@@ -789,3 +789,17 @@ p {
         padding-bottom: 6px;
     }
 }
+
+/* Guarantee Safari flex wrappers don't collapse */
+.trust-banner > a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+@media (max-width: 768px) {
+    .trust-banner > a {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+}
